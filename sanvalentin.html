@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi San Valentín?</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            font-family: 'Georgia', serif;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            color: #00ff6e;
+            font-size: 3em;
+            font-style: italic;
+            animation: latido 2s infinite;
+            text-shadow: 0 0 10px rgba(19, 255, 2, 0.8);
+        }
+
+        @keyframes latido {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .firework {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: transparent;
+            animation: explotar 1.5s ease-out infinite;
+        }
+
+        @keyframes explotar {
+            0% { transform: scale(0); opacity: 1; }
+            100% { transform: scale(10); opacity: 0; }
+        }
+
+        .tulipanes {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2em;
+            display: flex;
+        }
+
+        .tulipan {
+            animation: balanceo 2s infinite alternate;
+            margin: 0 5px;
+        }
+
+        @keyframes balanceo {
+            0% { transform: rotate(-5deg); }
+            100% { transform: rotate(5deg); }
+        }
+
+        .confeti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            opacity: 0.7;
+            animation: caer 3s linear infinite;
+        }
+
+        @keyframes caer {
+            0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+
+        .pareja {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5em;
+            text-align: center;
+            white-space: pre;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¿Quieres ser mi San Valentín?</h1>
+    </div>
+
+    <div class="tulipanes">
+        <div class="tulipan">🌷</div>
+        <div class="tulipan">🌷</div>
+        <div class="tulipan">🌺</div>
+        <div class="tulipan">🌺</div>
+        <div class="tulipan">🌺</div>
+        <div class="tulipan">🌷</div>
+        <div class="tulipan">🌷</div>
+        
+    </div>
+
+    <div class="pareja">
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+░░░▄▄▄░░░░▄███▄▄███▄░░░░░░▄░░▄░░░░░░░░
+░░░░█░░░░░██████████░░░░░░█░░█░░░░░░░░
+░░░░█░░░░░░▀██████▀░░░░░░░█░░█░░░░░░░░
+░░░▀▀▀░░░░░░░▀██▀░░░░░░░░░░▀▀░░░░░░░░░
+░░░░░░░░░░░░▄░░░░░█░▄▀░░▄░░░░░░░░░░░░░
+░░░░░░░░▄░░░▀▄▄▄▀█▀▀█▀▀▄█▄░█░░░░░░░░░░
+░░░░░░░░░▀▄▄▀█░░░▀░░░░░░░░█▄░▄▀▀░░░░░░
+░░░░░▀▀▄░█▀░░░░░░░░░▄▄▄▄▄▄░▀█░░░░░░░░░
+░░░░░░▄▀▀░▄▄▀▀▀▄░░▄█▀░░░░▀▄░▄█▀▀▀▄░░░░
+░░░▄▄██░░█░░░░░░█░█░░███░▄▀░░░██░█░░░░
+░░█░▄█░░░█░███░▄▀░▀▀▄███▀░░░░░██░█░░░░
+░░█░▀█▄░░▀▄███▄▀░░░░░░░░░░░░░▄█▄▀░░░░░
+░░░▀▀▀▀█░░░░░░░░░░░░░░░▄█▀░░▄▀░░░░▄░░░
+░░░░▄░░░▀▄░▀▀▄▄░░░░░▄▄▀▀░░▄▀░░░░▄█▀░░░
+░░▄▄█▄░░░░▀▀▄▄░▀▀▀▀▀░▄▄▄▀▀░░▄▄▀▀▀█▀▀░░
+░░▄█▀▀▀▀▄▄▄▄░░▀▀▀▀▀█▀░░░▄▄▀▀░░░░░░▀░░░
+░░░░░░░░░░░░▀▀▀▀▀▄▄█▄▄▀▀░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░▀░░░░░░░░░░░░░░░░░░
+    </div>
+
+    <script>
+        function crearFuegosArtificiales() {
+            for (let i = 0; i < 10; i++) {
+                let firework = document.createElement('div');
+                firework.classList.add('firework');
+                document.body.appendChild(firework);
+                
+                let x = Math.random() * window.innerWidth;
+                let y = Math.random() * window.innerHeight / 2;
+                let color = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                
+                firework.style.left = `${x}px`;
+                firework.style.top = `${y}px`;
+                firework.style.backgroundColor = color;
+                firework.style.animationDuration = `${1 + Math.random()}s`;
+                
+                setTimeout(() => { firework.remove(); }, 1500);
+            }
+        }
+
+        function crearConfeti() {
+            for (let i = 0; i < 20; i++) {
+                let confeti = document.createElement('div');
+                confeti.classList.add('confeti');
+                document.body.appendChild(confeti);
+                
+                let x = Math.random() * window.innerWidth;
+                let color = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                
+                confeti.style.left = `${x}px`;
+                confeti.style.backgroundColor = color;
+                confeti.style.animationDuration = `${2 + Math.random()}s`;
+                
+                setTimeout(() => { confeti.remove(); }, 3000);
+            }
+        }
+
+        setInterval(crearFuegosArtificiales, 1000);
+        setInterval(crearConfeti, 500);
+    </script>
+</body>
+</html>
+
